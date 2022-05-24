@@ -66,6 +66,7 @@ const updateEmployee =  async(req, res, next) => {
     if(!employee){
         return res.status(404).json({message: 'Unable to update'})
     }
+     employee = await Employee.findById(id)
     return res.status(200).json({employee});
  
 }
